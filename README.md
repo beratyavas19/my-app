@@ -1,0 +1,1 @@
+Berat yavas tarafindan olusturuldu.
