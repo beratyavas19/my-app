@@ -1,32 +1,54 @@
 package com.mycompany.app;
+
+import junit.framework.Test;
+import junit.framework.TestCase;
+import junit.framework.TestSuite;
 import java.util.ArrayList;
 import java.util.Arrays;
-import org.junit.*;
-import static org.junit.Assert.*;
-public class AppTest
-{
 
-    @Test
-    public void testFound()
+/**
+ * Unit test for simple App.
+ */
+public class AppTest extends TestCase
+{
+    /**
+     * Create the test case
+     *
+     * @param testName name of the test case
+     */
+    public AppTest( String testName )
     {
-        ArrayList<Integer> array=new ArrayList<>(Arrays.asList(1,2,3,4));
-        assertTrue(new App().search(array,4));
+        super( testName );
     }
-    @Test
-    public void testNotFound()
+
+    /**
+     * @return the suite of tests being tested
+     */
+    public static Test suite()
     {
-        ArrayList<Integer> array=new ArrayList<>(Arrays.asList(1,2,3,4));
-        assertFalse(new App().search(array,5));
+        return new TestSuite( AppTest.class );
     }
-    @Test
-    public void testEmptyArray()
+
+    /**
+     * Rigourous Test :-)
+     */
+    public void testApp()
     {
-        ArrayList<Integer> array=new ArrayList<>();
-        assertFalse(new App().search(array,1));
+        assertTrue( true );
     }
-    @Test
-    public void testNull()
-    {
-        assertFalse(new App().search(null,1));
+    public void testFound() {
+        ArrayList<Integer> array = new ArrayList<>(Arrays.asList(1, 2, 3, 4));
+        assertTrue(new App().search(array, 4));
+    }
+    public void testNotFound() {
+        ArrayList<Integer> array = new ArrayList<>(Arrays.asList(1, 2, 3, 4));
+        assertFalse(new App().search(array, 5));
+    }
+    public void testEmptyArray() {
+        ArrayList<Integer> array = new ArrayList<>();
+        assertFalse(new App().search(array, 1));
+    }
+    public void testNull() {
+        assertFalse(new App().search(null, 1));
     }
 }
